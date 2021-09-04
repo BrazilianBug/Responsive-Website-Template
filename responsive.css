@@ -1,0 +1,64 @@
+@media all and (min-width: 1080px) and (max-width: 1920px) { 
+    body{
+        --width: 1200px;
+        background-color: #FFD100;}
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+    body{
+        --width: 1024px;
+        background-color: #9A00FF;}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        --width: 768px;
+        background: url(bg.png);}
+ }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    body{
+        --width: 450px;
+        background-color: #FF9100;}
+ }
+ @media all and (min-width: 360px) and (max-width: 480px) {
+    body{
+        --width: 360px;
+        background-color: #ff00d4;}
+ }
+@media all and (max-width: 480px) { 
+    body{
+        --width: 460px;
+        background-color: #00DCFF;}
+    
+}
+
+/*
+#FFD100
+#9A00FF
+#FF00DD
+#FF9100
+#00DCFF
+
+
+body{
+    background-color: ##;
+}
+
+body{
+    --width: 1320px;
+    background-color: rgb(34, 34, 34);
+
+
+
+body{
+    --width: 1320px;
+
+    display: grid;
+    grid-template-columns: 
+        calc(50vw - calc(var(--width) /2))
+        repeat(3,1fr)
+        calc(50vw - calc(var(--width) /2));
+    margin: 0 auto;
+    background-color: rgb(34, 34, 34);
+*/

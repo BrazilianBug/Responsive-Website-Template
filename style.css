@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+/*
+body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(34, 34, 34);
+}
+section{
+    background-color: antiquewhite;
+    grid-column: 1/ -1;
+}
+*/
+
+body{
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: hidden;
+    overflow-y: auto;
+    --width: 1320px;
+
+    display: grid;
+    grid-template-columns: 
+        calc(50vw - calc(var(--width) /2))
+        repeat(3,1fr)
+        calc(50vw - calc(var(--width) /2));
+    margin: 0 auto;
+    background-color: rgb(34, 34, 34);
+
+}
+
+section{
+    padding-top: 70px;
+    height: 100vh;
+    grid-column: 2/ -2;
+    display: flex;
+    align-items : center;
+    justify-content: center;
+}
+section#Home{
+    background-color: antiquewhite;
+
+}
+
+section#About{
+    background-color: blueviolet;
+}
+section#Help{
+    background-color: aquamarine;
+}
+section#Contact{
+    background-color: brown;
+}
+
+.l-hero{
+    grid-column: 1/ -1;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size:  clamp(3rem, 6.5vw, 6rem); 
+}
+a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+a:hover{
+    background-color: aliceblue;
+}
+
+#logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header{
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #e7e7e7;
+}
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+
+#menu a{
+    display: block;
+    padding: .5rem;
+}
+#btn-mobile{
+    display: none;
+}
+@media (max-width: 600px) {
+    #btn-mobile{
+        display: block;
+    }
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: #e7e7e7;
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+      }
+      #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+      }
+      #menu a{
+          padding: 1rem 0;
+          margin: 0 1rem;
+          border-bottom: 2px solid rgba(0, 0, 0, .05);
+      }
+      #btn-mobile{
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+      }
+      #hamburger{
+          border-top: 2px solid;
+          width: 20px;
+      }
+      #hamburger::after, #hamburger::before{
+          content: '';
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: currentColor;
+          margin-top: 5px;
+          transition: .3s;
+          position: relative;
+      }
+      #nav.active #hamburger{
+          border-top-color: transparent;
+      }
+      #nav.active #hamburger::before{
+        transform: rotate(135deg);
+      }
+      #nav.active #hamburger::after{
+          transform: rotate(-135deg);
+          top: -7px;
+    }
+}
